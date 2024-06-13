@@ -4,5 +4,10 @@ body {
 
 .Post {
   text-align: center;
- 
+}
+
+.post-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
