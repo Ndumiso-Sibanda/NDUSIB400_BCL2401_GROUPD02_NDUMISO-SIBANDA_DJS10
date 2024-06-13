@@ -19,11 +19,27 @@ function App() {
         return setError(error.message)
       });
   }, [])
-}
-const postElements = posts.map(post => 
 
-  <div key={post.id} className="post-tile">
-    <h2 > <span>{post.id}</span>. {post.title}</h2>
-    <p>{post.body}</p>
-  </div>
-)
+  const postElements = posts.map(post => 
+
+    <div key={post.id} className="post-tile">
+      <h2 > <span>{post.id}</span>. {post.title}</h2>
+      <p>{post.body}</p>
+    </div>
+  )
+
+  return (
+    <>
+      {error ? (
+        <img src={imgUrl} alt="404" />
+      ) : (
+        <>
+          <h1 className="Post">Posts</h1>
+          {postElements}
+        </>
+      )}
+    </>
+  )
+}
+
+export default App
