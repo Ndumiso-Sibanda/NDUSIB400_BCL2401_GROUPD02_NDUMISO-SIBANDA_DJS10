@@ -12,5 +12,11 @@ function App() {
         if (!res.ok) {
           throw new Error("Failed to fetch data")
         }
-})
+        return res.json()})
+      .then(data => setPosts(data))
+      .catch(error => {
+        console.log(error.message)
+        return setError(error.message)
+      });
+  }, [])
 }
