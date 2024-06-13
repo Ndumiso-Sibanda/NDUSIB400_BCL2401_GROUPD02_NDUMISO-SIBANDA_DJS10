@@ -20,3 +20,10 @@ function App() {
       });
   }, [])
 }
+const postElements = posts.map(post => 
+
+  <div key={post.id} className="post-tile">
+    <h2 > <span>{post.id}</span>. {post.title}</h2>
+    <p>{post.body}</p>
+  </div>
+)
